@@ -22,6 +22,9 @@
  * - Time stamp is now shown at the beginning of the comment, as part of the
  * line, so that it is apparent to the user, where the words are gonna get
  * wrapped.
+ *
+ * v.1.1.11 2016-04-12 01:20 (EET)
+ * [just a note - pulled the project into GitHub (testing data integrity ;) )]
 */
 
 //TODO finalise ":q" sequence, so that the program would not print the datestamp
