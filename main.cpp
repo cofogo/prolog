@@ -30,6 +30,7 @@
 //TODO finalise ":q" sequence, so that the program would not print the datestamp
 /*TODO implement feature allowing manaual time logging, the timer should be an
  an explicit command available for the user with the bilities to pause/stop/resume*/
+//TODO consider making an insteractive menu for commands alongside esc mode
 //TODO implement handling of several projects simultaneously
 //TODO (2015-10-19:2210) wrap whole words without cutting, for better readability.
 //TODO Add 'clear' functionality to escape mode
