@@ -24,7 +24,10 @@
  * wrapped.
  *
  * v.1.1.11 2016-04-12 01:20 (EET)
- * [just a note - pulled the project into GitHub (testing data integrity ;) )]
+ * [just a note - put the project into GitHub (testing data integrity ;) )]
+ *
+ * v.1.2.0 2016-05-9 22:08 (EET)
+ * added the possibility to add time to a project by typing it in
 */
 
 //TODO finalise ":q" sequence, so that the program would not print the datestamp
@@ -91,7 +94,8 @@ int main(){
       clear();
       mvprintw(11, 0, "Session started.");
       mvprintw(12, 0, "Press n - to leave a note (/end to end commenting).");
-      mvprintw(13, 0, "Press q - to end session.");
+      mvprintw(13, 0, "Press t - to add time post factum");
+      mvprintw(14, 0, "Press q - to end session.");
       refresh;
       i1 = getch();
 
@@ -116,6 +120,31 @@ int main(){
         fileOut << endl;
         str1 = "";
       }
+      else if(i1 == 't'){
+		char chBuff = 0;
+		strBuffer = ""; //clearing buffer just in case
+		clear();
+		mvprintw(0, 0, "Enter time in mintues:");
+		
+		while(chBuff != '\n'){
+		  int iBuff = getch();
+		  
+		  refresh();
+			  
+		  if(iBuff == 27){ //ESC key pressed
+			continue;
+		  }
+		  
+		  chBuff = iBuff;
+		  if(chBuff == '\n' && strBuffer.size() > 0){
+		    int result = stoi(strBuffer) * 60;
+		    time1 = time1 - result;
+		  }
+		  
+		  strBuffer = strBuffer + chBuff;
+		  mvprintw(1, 0, strBuffer.c_str());
+		}
+	  }
     }while(i1 != 'q');
 
     //wrap up
@@ -130,7 +159,7 @@ int main(){
     fileOut << "Session time: " << timeBuffer << endl;
     fileOut.close();
     fileIn.open("totaltm", ios::in | ios::binary);
-    strBuffer = "";//emptying strBuffer to later verivy totaltm file data
+    strBuffer = "";//emptying strBuffer to later verify totaltm file data
     getline(fileIn, strBuffer);
     fileIn.close();
     if(strBuffer == ""){
