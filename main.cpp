@@ -31,20 +31,21 @@
 */
 
 //TODO finalise ":q" sequence, so that the program would not print the datestamp
-/*TODO (2015-10-19:0210) implemet ability to start a session in regress time.
-(e.g. forgot to start, or forgor to log time)*/
+/*TODO implement feature allowing manaual time logging, the timer should be an
+ an explicit command available for the user with the bilities to pause/stop/resume*/
+//TODO consider making an insteractive menu for commands alongside esc mode
+//TODO implement handling of several projects simultaneously
 //TODO (2015-10-19:2210) wrap whole words without cutting, for better readability.
 //TODO Add 'clear' functionality to escape mode
 //TODO remove the word-by-word checeker, seems redundant (check!)
 //ASCII gui (ncurses)
 //progress bar, percentage, versions
-//TODO Capability to Display the log
+//TODO Capability to Display the log?
 //TODO Capability to pause a session?
 //TODO Interactive menu of selections
 /*TODO Display how long a session and the project has lasted so far
  *(1.at the new note display screen?)(2.esc mode :t)*/
 //TODO think about UI: session actions menu when in session, log display
-//TODO ?centralise program (browse folders, change project, project path)?
 
 
 #include <iostream>
