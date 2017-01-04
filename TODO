@@ -1,0 +1,3 @@
+- Implement following external settings via a config file:
+    - Duration of day for calculation (e.g. 24h vs 8h)
+- Implement the ability to log several projects, via defining and selecting filenames and directories.
