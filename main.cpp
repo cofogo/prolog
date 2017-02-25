@@ -174,8 +174,10 @@ int main(){
     time3 = totalTime;
     timeinfo = gmtime(&time3);
     strftime(timeBuffer, sizeof(timeBuffer), "%T", timeinfo);//fill timebuffer with string; here timeinfo set to totalTime
+    i1 = totalTime / 3600;
+	str1 = to_string(i1) + "h";
     i1 = secsToDays(totalTime);
-    str1 = to_string(i1) + "d. " + timeBuffer;
+    str1 = str1 + " (" + to_string(i1) + "d. " + timeBuffer + ")";
     fileOut << "Project time: " << str1 << endl << endl;
     fileOut.close();
   }
